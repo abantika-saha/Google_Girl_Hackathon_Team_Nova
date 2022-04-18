@@ -10,7 +10,7 @@ import { AUTH } from '../../constants/actionTypes';
 import useStyles from './styles';
 import Input from './Input';
 
-const initialState = { name:'', email: '', password: '', confirmPassword: '',year:'',userType:'' };
+const initialState = { name:'', email: '', password: '', confirmPassword: '',userType:'' };
 
 
 const AuthVolunteer = () => {

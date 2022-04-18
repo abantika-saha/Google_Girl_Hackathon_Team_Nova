@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import useStyles from './styles';
 
-const Home = () => {
+const Home = ({open}) => {
+    const classes = useStyles();
     return (
-        <div>
+        <div className={open?classes.root:null}>
             <h1>Home</h1>
         </div>
     )
