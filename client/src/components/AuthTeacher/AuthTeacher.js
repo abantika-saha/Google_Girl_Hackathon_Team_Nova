@@ -13,7 +13,7 @@ import Input from './Input';
 const initialState = { name:'', email: '', password: '', confirmPassword: '',userType:'' };
 
 
-const AuthVolunteer = () => {
+const AuthTeacher = () => {
     const [form, setForm] = useState(initialState);
     const [isSignup, setIsSignup] = useState(false);
     const dispatch = useDispatch();
@@ -86,4 +86,4 @@ const AuthVolunteer = () => {
     );
 };
 
-export default AuthVolunteer;
+export default AuthTeacher;

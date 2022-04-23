@@ -26,7 +26,7 @@ const Navbar = ({ open, setOpen }) => {
   const location = useLocation();
   const history = useHistory();
   const classes = useStyles();
-  const teacherLinks = ["/my-courses","/demo", "/resources", "/assignments", "/messages", "/discussion-forum","/leaderboard", "/poll-system", "/tests"];
+  const teacherLinks = ["/my-courses","/demo", "/resources", "/assignments", "/messages", "/discussion-forum", "/poll-system", "/tests"];
   const studentLinks = ["/my-courses","/elective-courses", "/demo", "/resources", "/assignments", "/messages", "/discussion-forum","/leaderboard", "/poll-system", "/tests"];
 
   const logout = () => {
@@ -139,26 +139,28 @@ const Navbar = ({ open, setOpen }) => {
         </div>
         <Divider />
         <List>
-          <ListItem>Dashboard</ListItem>
+          <ListItem>DASHBOARD</ListItem>
           <Divider />
           <ListItem className={classes.aboutMe}>About Me</ListItem>
-          <ListItem button>Preview Profile</ListItem>
-          <ListItem button>Update Profile</ListItem>
+          <ListItem button>PREVIEW PROFILE</ListItem>
+          <ListItem button>UPDATE PROFILE</ListItem>
           <Divider />
-          <ListItem className={classes.aboutMe}>My University Lists</ListItem>
+          {/* <ListItem className={classes.aboutMe}>My University Lists</ListItem>
           <ListItem button>My Courses</ListItem>
           {/* <ListItem button>Elective Courses</ListItem> */}
-          <ListItem button>Demo</ListItem>
-          <ListItem button>Resources</ListItem>
+          {/* <ListItem button>Demo</ListItem> */}
+          {/* <ListItem button>Resources</ListItem>
           <ListItem button>Assignments</ListItem>
           <ListItem button>Messages</ListItem>
           <ListItem button>Discussion Forum</ListItem>
           <ListItem button>Student Leaderboard</ListItem>
           <ListItem button>Poll System</ListItem>
-          <ListItem button>Tests</ListItem>
-          {/* {user?(user.result.hasOwnProperty('year')?
+          <ListItem button>Tests</ListItem> */} 
+        
+          {console.log(Object.userType)}
+          {user?(user.result.year!=null?
           studentLinks.map((link)=><ListItem onClick={()=>assign(link)} button>{link.slice(1).replace("-"," ").toUpperCase()}</ListItem>):
-          teacherLinks.map((link)=><ListItem onClick={()=>assign(link)} button>{link.slice(1).replace("-"," ").toUpperCase()}</ListItem>)):null} */}
+          teacherLinks.map((link)=><ListItem onClick={()=>assign(link)} button>{link.slice(1).replace("-"," ").toUpperCase()}</ListItem>)):null}
         </List>
       </Drawer>
     </div>
