@@ -35,6 +35,7 @@ const Navbar = ({ open, setOpen }) => {
   const classes = useStyles();
   const teacherLinks = [
     "/my-courses",
+    "/add-course",
     "/demo",
     "/resources",
     "/assignments",
@@ -45,6 +46,7 @@ const Navbar = ({ open, setOpen }) => {
   ];
   const studentLinks = [
     "/my-courses",
+    "/add-course",
     "/elective-courses",
     "/demo",
     "/resources",
@@ -62,7 +64,7 @@ const Navbar = ({ open, setOpen }) => {
     dispatch({ type: actionType.LOGOUT });
 
     history.push("/auth");
-
+    
     setOpen(false);
     setUser(null);
   };
@@ -80,7 +82,7 @@ const Navbar = ({ open, setOpen }) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const assign = (link) => {
+  const assign = (link)=>{
     history.push(link);
   };
 
@@ -184,7 +186,7 @@ const Navbar = ({ open, setOpen }) => {
         open={open}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
+          <IconButton onClick={handleDrawerClose} style={{color:"white"}}>
             <ChevronLeftIcon />
           </IconButton>
         </div>

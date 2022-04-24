@@ -11,6 +11,8 @@ import Auth from "./components/Auth/Auth";
 import Discussion from "./components/Discussion/Discussion";
 import DoubtDetails from "./components/DoubtDetails/DoubtDetails";
 import LeaderBoard from "./components/LeaderBoard/LeaderBoard";
+import MyCourses from './components/MyCourses/MyCourses';
+import CoursePopup  from './components/MyCourses/CoursePopup';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -28,6 +30,8 @@ const App = () => {
         <div className="App">
           <Route exact path="/elective-courses" component={HomeContent} />
         </div>
+        <Route exact path="/my-courses" component={MyCourses}/>
+        <Route exact path="/add-course" component={CoursePopup}/> 
       </Switch>
     </BrowserRouter>
   );

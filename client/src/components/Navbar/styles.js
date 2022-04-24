@@ -50,6 +50,9 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
+  aboutMe:{
+    color: "#cfcfcf",
+  },
   brandContainer: {
     display: 'flex',
     alignItems: 'center',
