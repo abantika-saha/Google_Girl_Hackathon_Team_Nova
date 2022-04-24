@@ -8,7 +8,7 @@ import AuthStudent from './components/AuthStudent/AuthStudent'
 import Navbar from './components/Navbar/Navbar'
 import Auth from './components/Auth/Auth'
 import MyCourses from './components/MyCourses/MyCourses'
-
+import AddCourses from './components/AddCourses/AddCourses'
 
 
 const App = () => {
@@ -20,7 +20,8 @@ const App = () => {
                 <Route exact path="/" render={()=><Home open={open}/>} />
                 <Route exact path="/auth" component={Auth} /> 
                 <Route exact path="/auth/student" component={AuthStudent} />
-                <Route exact path="/my-courses" component={MyCourses}/>    
+                <Route exact path="/my-courses" component={MyCourses}/>  
+                
                  
             </Routes>
         </BrowserRouter>
