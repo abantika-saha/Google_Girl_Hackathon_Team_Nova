@@ -5,6 +5,10 @@ const studentSchema = mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   year: { type: String, required: true },
+  count: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const studentModel = mongoose.model("studentModel", studentSchema);

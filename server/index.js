@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 
 import userRouter from "./routes/user.js";
 import discussionRoutes from "./routes/doubts.js";
+import leaderboardRouter from "./routes/leaderboard.js";
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,7 @@ app.use(cors());
 
 app.use("/user", userRouter);
 app.use("/discussion", discussionRoutes);
+app.use("/leaderboard", leaderboardRouter);
 
 
 const PORT = process.env.PORT|| 5000;
