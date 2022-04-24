@@ -2,12 +2,14 @@ import React, { useState, useRef, useEffect} from "react";
 import { Typography, TextField, Button } from "@material-ui/core/";
 import { useDispatch } from "react-redux";
 import { commentDoubt } from '../../actions/doubts';
+import { useTranslation } from 'react-i18next';
 import useStyles from "./styles";
 
 const CommentSection = ({ doubt }) => {
   const user = JSON.parse(localStorage.getItem("profile"));
   const [comments, setComments] = useState(doubt?.comments);
   const [comment, setComment] = useState("");
+  const {t,i18n} = useTranslation();
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -30,7 +32,7 @@ const CommentSection = ({ doubt }) => {
       <div >
         <div >
           <Typography gutterBottom variant="h5">
-            <strong>Comments:</strong>
+            <strong>{t("Comments:")}</strong>
           </Typography>
           {!comments[0] && <h3>No comments yet!</h3>}
             {comments[0] && <Typography key={0} gutterBottom variant="subtitle1">

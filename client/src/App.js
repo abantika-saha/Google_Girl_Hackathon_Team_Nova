@@ -24,7 +24,7 @@ const App = () => {
                 <Route exact path="/auth/teacher" component={AuthTeacher} /> 
                 <Route exact path="/discussion" component={Discussion} /> 
                 <Route exact path="/discussion/:id" component={DoubtDetails} /> 
-                <Route exact path="/leaderboard" component={LeaderBoard} />  
+                <Route exact path="/leaderboard" component={LeaderBoard} />
             </Switch>
         </BrowserRouter>
     )

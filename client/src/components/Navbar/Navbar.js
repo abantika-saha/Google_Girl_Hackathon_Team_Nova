@@ -10,32 +10,66 @@ import {
   ListItem,
   IconButton,
   Divider,
+  Box,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
+import { useTranslation } from "react-i18next";
 
 import * as actionType from "../../constants/actionTypes";
 import useStyles from "./styles";
 
 const Navbar = ({ open, setOpen }) => {
+  const { t, i18n } = useTranslation();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
   const classes = useStyles();
-  const teacherLinks = ["/my-courses","/demo", "/resources", "/assignments", "/messages", "/discussion", "/poll-system", "/tests"];
-  const studentLinks = ["/my-courses","/elective-courses", "/demo", "/resources", "/assignments", "/messages", "/discussion","/leaderboard", "/poll-system", "/tests"];
+  const teacherLinks = [
+    "/my-courses",
+    "/demo",
+    "/resources",
+    "/assignments",
+    "/messages",
+    "/discussion",
+    "/polls",
+    "/tests",
+  ];
+  const studentLinks = [
+    "/my-courses",
+    "/elective-courses",
+    "/demo",
+    "/resources",
+    "/assignments",
+    "/messages",
+    "/discussion",
+    "/leaderboard",
+    "/polls",
+    "/tests",
+  ];
+
+  const [language, setLanguage] = useState("en");
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
 
     history.push("/auth");
-    
+
     setOpen(false);
     setUser(null);
+  };
+
+  const handleLang = (e) => {
+    setLanguage(e.target.value);
+    i18n.changeLanguage(e.target.value);
   };
 
   const eliminatedLinks = ["/auth", "/auth/student", "/auth/teacher"];
@@ -46,7 +80,7 @@ const Navbar = ({ open, setOpen }) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const assign = (link)=>{
+  const assign = (link) => {
     history.push(link);
   };
 
@@ -89,7 +123,7 @@ const Navbar = ({ open, setOpen }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h5" className={classes.Header}>
-            Amalgam
+            {t("Amalgam")}
           </Typography>
         </div>
         <Toolbar className={classes.toolbar}>
@@ -111,7 +145,7 @@ const Navbar = ({ open, setOpen }) => {
                 color="secondary"
                 onClick={logout}
               >
-                Logout
+                {t("Logout")}
               </Button>
             </div>
           ) : (
@@ -121,10 +155,27 @@ const Navbar = ({ open, setOpen }) => {
               variant="contained"
               color="primary"
             >
-              Sign In
+              {t("Sign In")}
             </Button>
           )}
         </Toolbar>
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              {t("Language")}
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={language}
+              label="Age"
+              onChange={handleLang}
+            >
+              <MenuItem value={"en"}>{t("English")}</MenuItem>
+              <MenuItem value={"hi"}>{t("Hindi")}</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
       </AppBar>
       <Drawer
         align="left"
@@ -133,7 +184,7 @@ const Navbar = ({ open, setOpen }) => {
         open={open}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose} style={{color:"white"}}>
+          <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
             <ChevronLeftIcon />
           </IconButton>
         </div>
@@ -145,22 +196,20 @@ const Navbar = ({ open, setOpen }) => {
           <ListItem button>PREVIEW PROFILE</ListItem>
           <ListItem button>UPDATE PROFILE</ListItem>
           <Divider />
-          {/* <ListItem className={classes.aboutMe}>My University Lists</ListItem>
-          <ListItem button>My Courses</ListItem>
-          {/* <ListItem button>Elective Courses</ListItem> */}
-          {/* <ListItem button>Demo</ListItem> */}
-          {/* <ListItem button>Resources</ListItem>
-          <ListItem button>Assignments</ListItem>
-          <ListItem button>Messages</ListItem>
-          <ListItem button>Discussion Forum</ListItem>
-          <ListItem button>Student Leaderboard</ListItem>
-          <ListItem button>Poll System</ListItem>
-          <ListItem button>Tests</ListItem> */} 
-        
           {console.log(Object.userType)}
-          {user?(user.result.year!=null?
-          studentLinks.map((link)=><ListItem onClick={()=>assign(link)} button>{link.slice(1).replace("-"," ").toUpperCase()}</ListItem>):
-          teacherLinks.map((link)=><ListItem onClick={()=>assign(link)} button>{link.slice(1).replace("-"," ").toUpperCase()}</ListItem>)):null}
+          {user
+            ? user.result.year != null
+              ? studentLinks.map((link) => (
+                  <ListItem onClick={() => assign(link)} button>
+                    {link.slice(1).replace("-", " ").toUpperCase()}
+                  </ListItem>
+                ))
+              : teacherLinks.map((link) => (
+                  <ListItem onClick={() => assign(link)} button>
+                    {link.slice(1).replace("-", " ").toUpperCase()}
+                  </ListItem>
+                ))
+            : null}
         </List>
       </Drawer>
     </div>

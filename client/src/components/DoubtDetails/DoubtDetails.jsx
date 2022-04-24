@@ -10,12 +10,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { getDoubt } from "../../actions/doubts";
 import CommentSection from './CommentSection';
+import { useTranslation } from 'react-i18next';
 import useStyles from "./styles";
 
 const Doubt = () => {
   const { doubt, doubts, isLoading } = useSelector((state) => state.doubts);
   const dispatch = useDispatch();
   const classes = useStyles();
+  const {t,i18n} = useTranslation();
   const history = useHistory();
   const { id } = useParams();
   const open = useSelector((state)=>state.open);
@@ -45,7 +47,7 @@ const Doubt = () => {
         <Typography variant="h3" component="h2">
           {doubt.question}
         </Typography>
-        <Typography variant="h6">{"Asked by"}: {doubt.name}</Typography>
+        <Typography variant="h6">{t("Asked by")}: {doubt.name}</Typography>
         <Divider style={{ margin: "20px 0" }} />
         <Typography variant="body1">
         <CommentSection doubt={doubt} />

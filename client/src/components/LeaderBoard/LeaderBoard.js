@@ -11,6 +11,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles({
     table: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles({
 const LeaderBoard = () => {
   const classes = useStyles();
   const [leaderboard, setLeaderboard] = useState([]);
+  const {t,i18n} = useTranslation();
   useEffect(() => {
     const getLeaderboard = async () => {
       const board = await axios.get("http://localhost:5000/leaderboard");
@@ -31,15 +33,15 @@ const LeaderBoard = () => {
   }, []);
   return (
 <div>
-    <Typography variant="h3" color="primary">Leaderboard</Typography>
+    <Typography variant="h3" color="primary">{t("Leaderboard")}</Typography>
     <br/>
             <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">  
               <TableHead>
                 <TableRow>
-                  <TableCell ><Typography variant="h5" color="primary"><strong>Rank</strong></Typography></TableCell>
-                  <TableCell align="right"><Typography variant="h5" color="primary"><strong>Name</strong></Typography></TableCell>
-                  <TableCell align="right"><Typography variant="h5" color="primary"><strong>Score</strong></Typography></TableCell>
+                  <TableCell ><Typography variant="h5" color="primary"><strong>{t("Rank")}</strong></Typography></TableCell>
+                  <TableCell align="right"><Typography variant="h5" color="primary"><strong>{t("Name")}</strong></Typography></TableCell>
+                  <TableCell align="right"><Typography variant="h5" color="primary"><strong>{t("Score")}</strong></Typography></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
