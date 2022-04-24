@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
@@ -24,15 +24,15 @@ const Navbar = ({ open, setOpen }) => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
   const location = useLocation();
-  const history = useNavigate();
+  const history = useHistory();
   const classes = useStyles();
-  const teacherLinks = ["/my-courses","/demo", "/resources", "/assignments", "/messages", "/discussion-forum", "/poll-system", "/tests"];
-  const studentLinks = ["/my-courses","/elective-courses", "/demo", "/resources", "/assignments", "/messages", "/discussion-forum","/leaderboard", "/poll-system", "/tests"];
+  const teacherLinks = ["/my-courses","/demo", "/resources", "/assignments", "/messages", "/discussion", "/poll-system", "/tests"];
+  const studentLinks = ["/my-courses","/elective-courses", "/demo", "/resources", "/assignments", "/messages", "/discussion","/leaderboard", "/poll-system", "/tests"];
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
 
-    history("/auth");
+    history.push("/auth");
     
     setOpen(false);
     setUser(null);
@@ -144,10 +144,7 @@ const Navbar = ({ open, setOpen }) => {
           <ListItem className={classes.aboutMe}>About Me</ListItem>
           <ListItem button>PREVIEW PROFILE</ListItem>
           <ListItem button>UPDATE PROFILE</ListItem>
-          
           <Divider />
-
-          <ListItem button component={Link} to="/my-courses">My COURSES</ListItem>
           {/* <ListItem className={classes.aboutMe}>My University Lists</ListItem>
           <ListItem button>My Courses</ListItem>
           {/* <ListItem button>Elective Courses</ListItem> */}
