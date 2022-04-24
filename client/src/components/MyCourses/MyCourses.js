@@ -13,72 +13,72 @@ function MyCourses(props) {
         {
             "id":"1",
             "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "SubCode":"601",
+            "Teacher":"AKS"
     
         },
         {
             "id":"2",
-            "Name":"Course1",
+            "Name":"Course2",
             "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Teacher":"PSB"
     
         },
         {
             "id":"3",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course3",
+            "SubCode":"603",
+            "Teacher":"NKR"
     
         },
         {
             "id":"4",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course4",
+            "SubCode":"604",
+            "Teacher":"IA"
     
         },
         {
             "id":"5",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course5",
+            "SubCode":"605",
+            "Teacher":"SB"
     
         },
     
         {
             "id":"6",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course6",
+            "SubCode":"606",
+            "Teacher":"TKS"
     
         },
         {
             "id":"7",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course7",
+            "SubCode":"607",
+            "Teacher":"PA"
     
         },
         {
             "id":"8",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course8",
+            "SubCode":"608",
+            "Teacher":"CK"
     
         },
         {
             "id":"7",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course9",
+            "SubCode":"609",
+            "Teacher":"SSB"
     
         },
         {
             "id":"8",
-            "Name":"Course1",
-            "SubCode":"602",
-            "Teacher":"AK Shinha"
+            "Name":"Course10",
+            "SubCode":"610",
+            "Teacher":"JCB"
     
         },
     ]

@@ -26,12 +26,12 @@ const App = () => {
         <Route exact path="/auth/teacher" component={AuthTeacher} />
         <Route exact path="/discussion" component={Discussion} />
         <Route exact path="/discussion/:id" component={DoubtDetails} />
-        <Route exact path="/leaderboard" component={LeaderBoard} />
+        <Route exact path="/leaderboard" component={LeaderBoard} />        
+        <Route exact path="/my-courses" component={MyCourses}/>
+        <Route exact path="/add-course" component={CoursePopup}/> 
         <div className="App">
           <Route exact path="/elective-courses" component={HomeContent} />
         </div>
-        <Route exact path="/my-courses" component={MyCourses}/>
-        <Route exact path="/add-course" component={CoursePopup}/> 
       </Switch>
     </BrowserRouter>
   );
