@@ -1,0 +1,29 @@
+
+
+.fillerDiv .aboutFiller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  height: 60%;
+  flex-direction: column;
+  color: white;
+}
+
+.fillerDiv h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.fillerDiv p {
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+
+.fillerDiv .getstartedButton {
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 13px 13px;
+  cursor: pointer;
+}

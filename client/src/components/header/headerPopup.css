@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+  }
+  
+  .headerPopup {
+    background-color: #8f9798;
+    color:blue;
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .headerPopup .title {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  
+  .headerPopup .cross {
+    position: absolute;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .headerPopup .cross:hover {
+    cursor: pointer;
+  }
+  
+  .headerPopup .popupClearIcon {
+    transform: scale(0.8);
+  }
+  
+  .hide {
+    display: none;
+  }
