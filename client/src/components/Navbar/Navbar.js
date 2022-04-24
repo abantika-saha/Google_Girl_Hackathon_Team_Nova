@@ -41,7 +41,7 @@ const Navbar = ({ open, setOpen }) => {
     "/assignments",
     "/messages",
     "/discussion",
-    "/polls",
+    "/poll-system",
     "/tests",
   ];
   const studentLinks = [
@@ -54,7 +54,7 @@ const Navbar = ({ open, setOpen }) => {
     "/messages",
     "/discussion",
     "/leaderboard",
-    "/polls",
+    "/poll-system",
     "/tests",
   ];
 

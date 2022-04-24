@@ -13,6 +13,7 @@ import DoubtDetails from "./components/DoubtDetails/DoubtDetails";
 import LeaderBoard from "./components/LeaderBoard/LeaderBoard";
 import MyCourses from './components/MyCourses/MyCourses';
 import CoursePopup  from './components/MyCourses/CoursePopup';
+import Poll  from './components/Poll/Poll';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -29,6 +30,7 @@ const App = () => {
         <Route exact path="/leaderboard" component={LeaderBoard} />        
         <Route exact path="/my-courses" component={MyCourses}/>
         <Route exact path="/add-course" component={CoursePopup}/> 
+        <Route exact path="/poll-system" component={Poll}/>
         <div className="App">
           <Route exact path="/elective-courses" component={HomeContent} />
         </div>

@@ -8,7 +8,7 @@ import Icon from './icon';
 import { signin, signup } from '../../actions/auth';
 import { AUTH } from '../../constants/actionTypes';
 import useStyles from './styles';
-import Input from './Input';
+import Input from './input';
 
 const initialState = { name:'', email: '', password: '', confirmPassword: '',year:'', userType:'' };
 
