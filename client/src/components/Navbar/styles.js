@@ -7,8 +7,7 @@ export default makeStyles((theme) => ({
   appBar: {
     borderRadius: 5,
     margin: '0 0 30px 0',
-    // background: "linear-gradient(40deg,#ff6ec4,#7873f5)",
-    backgroundImage: "linear-gradient(to right, #4983fb, #009dff, #00b3ff, #03c7fc, #5bd8f5)",
+    background: "#0094de",
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -65,7 +64,7 @@ export default makeStyles((theme) => ({
   },
   paperWidth:{
     width:drawerWidth,
-    backgroundImage: "linear-gradient(to bottom, #4983fb, #009dff, #00b3ff, #03c7fc, #5bd8f5)",
+    background: "#0094de",
     color:"white",
     fontSize:"1.3rem",
     fontFamily:"Lato"
