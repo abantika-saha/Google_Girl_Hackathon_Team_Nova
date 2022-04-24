@@ -13,7 +13,7 @@ import Input from './input';
 const initialState = { name:'', email: '', password: '', confirmPassword: '',year:'', userType:'' };
 
 
-const AuthStudent = () => {
+const CoursePopup = () => {
     const [form, setForm] = useState(initialState);
     const [isSignup, setIsSignup] = useState(false);
     const dispatch = useDispatch();
@@ -55,36 +55,23 @@ const AuthStudent = () => {
     return (
         <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={3}>
-                <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon />
-                </Avatar>
-                <Typography component="h1" variant="h5">{isSignup ? 'Sign up' : 'Sign in'}</Typography>
+                
+                <Typography component="h1" variant="h5">Add Course</Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
-                        {isSignup && (
-                            <>
-                                <Input name="name" label="Name" handleChange={handleChange} autoFocus  />
-                                <Input name="year" label="Year" handleChange={handleChange} autoFocus  />
-                            </>
-                        )}
-                        <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
-                        <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
-                        {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
+                        <Input name="Name" label="Name" handleChange={handleChange} autoFocus  />
+                        <Input name="Sub_Code" label="Sub_Code" handleChange={handleChange} autoFocus  />
+                        <Input name="Teacher_Name" label="Teacher_Name" handleChange={handleChange}  />
+                        
                     </Grid>
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-                        {isSignup ? 'Sign Up' : 'Sign In'}
+                        Add Course
                     </Button>
-                    <Grid container justifyContent="flex-end">
-                        <Grid item>
-                            <Button onClick={switchMode}>
-                                {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
-                            </Button>
-                        </Grid>
-                    </Grid>
+                    
                 </form>
             </Paper>
         </Container>
     );
 };
 
-export default AuthStudent;
+export default CoursePopup;

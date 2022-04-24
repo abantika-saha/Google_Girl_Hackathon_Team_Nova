@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './components/Home/Home'
 import AuthStudent from './components/AuthStudent/AuthStudent'
 //<Route exact path="/auth/teacher" component={AuthTeacher} />  
@@ -8,7 +8,8 @@ import AuthStudent from './components/AuthStudent/AuthStudent'
 import Navbar from './components/Navbar/Navbar'
 import Auth from './components/Auth/Auth'
 import MyCourses from './components/MyCourses/MyCourses'
-import AddCourses from './components/AddCourses/AddCourses'
+import CoursePopup  from './components/MyCourses/CoursePopup'
+
 
 
 const App = () => {
@@ -16,14 +17,14 @@ const App = () => {
     return (
         <BrowserRouter>
             <Navbar open={open} setOpen={setOpen}/>
-            <Routes>
+            <Switch>
                 <Route exact path="/" render={()=><Home open={open}/>} />
                 <Route exact path="/auth" component={Auth} /> 
                 <Route exact path="/auth/student" component={AuthStudent} />
-                <Route exact path="/my-courses" component={MyCourses}/>  
-                
-                 
-            </Routes>
+                <Route exact path="/my-courses" component={MyCourses}/> 
+                <Route exact path="/add-course" component={CoursePopup}/> 
+
+            </Switch>
         </BrowserRouter>
     )
 }
