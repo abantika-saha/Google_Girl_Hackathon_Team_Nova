@@ -26,8 +26,8 @@ const Navbar = ({ open, setOpen }) => {
   const location = useLocation();
   const history = useHistory();
   const classes = useStyles();
-  const teacherLinks = ["/my-courses","/demo", "/resources", "/assignments", "/messages", "/discussion-forum", "/poll-system", "/tests"];
-  const studentLinks = ["/my-courses","/elective-courses", "/demo", "/resources", "/assignments", "/messages", "/discussion-forum","/leaderboard", "/poll-system", "/tests"];
+  const teacherLinks = ["/my-courses","/demo", "/resources", "/assignments", "/messages", "/discussion", "/poll-system", "/tests"];
+  const studentLinks = ["/my-courses","/elective-courses", "/demo", "/resources", "/assignments", "/messages", "/discussion","/leaderboard", "/poll-system", "/tests"];
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
