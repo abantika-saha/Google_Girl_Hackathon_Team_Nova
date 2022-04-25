@@ -1,14 +1,17 @@
 import React from "react";
 import "./styles.css";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const Poll = () => {
-  const {t,i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div class="form-container">
       <form class="register-form">
         {
-          <div class="success-message">{t("Fill the form to submit your opinion")}</div> }
+          <div class="success-message">
+            {t("Fill the form to submit your opinion")}
+          </div>
+        }
         <input
           id="roll number"
           class="form-field"
@@ -29,6 +32,6 @@ const Poll = () => {
       </form>
     </div>
   );
-}
+};
 
 export default Poll;
