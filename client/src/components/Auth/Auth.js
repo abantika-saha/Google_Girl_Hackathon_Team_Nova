@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const Auth = () => {
+  const {t,i18n} = useTranslation();
   return (
     <>
       <Button
@@ -12,7 +14,7 @@ const Auth = () => {
         color="primary"
         size="large"
       >
-        Student Login
+        {t("Student Login")}
       </Button>
       <Button
         component={Link}
@@ -21,7 +23,7 @@ const Auth = () => {
         color="secondary"
         size="large"
       >
-        Teacher Login
+        {t("Teacher Login")}
       </Button>
     </>
   );
