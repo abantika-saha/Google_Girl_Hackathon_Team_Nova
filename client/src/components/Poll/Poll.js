@@ -1,28 +1,30 @@
 import React from "react";
 import "./styles.css";
+import { useTranslation } from 'react-i18next';
 
 const Poll = () => {
+  const {t,i18n} = useTranslation();
   return (
     <div class="form-container">
       <form class="register-form">
         {
-          <div class="success-message">Fill the form to submit your opinion</div> }
+          <div class="success-message">{t("Fill the form to submit your opinion")}</div> }
         <input
           id="roll number"
           class="form-field"
           type="text"
-          placeholder="Roll Number"
+          placeholder={t("Roll Number")}
           name="Roll Number"
         />
         <input
           id="type of class"
           class="form-field"
           type="text"
-          placeholder="Type Online or Offline"
+          placeholder={t("Type Online or Offline")}
           name=""
         />
         <button class="form-field" type="submit">
-          Submit
+          {t("Submit")}
         </button>
       </form>
     </div>
