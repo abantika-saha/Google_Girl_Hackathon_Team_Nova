@@ -13,7 +13,7 @@ This project has been made by Team Nova for Google Girl Hackathon 2022.
 
 **BASIC DESCRIPTION:** We are building a web application which will be an effective learning application where faculty, students will meet, work together, share resources and have grading methodologies via tests/quizzes/assignments in one central location. 
 
-**VIDEO DEMO LINK**: 
+**VIDEO DEMO LINK**: [Video Demo Link](https://drive.google.com/file/d/1h6wu4us2i1aPptU3A1O6B66aZqlb5noy/view?usp=sharing)
 
 **PRESENTATION LINK**: [Presentation Link](https://docs.google.com/presentation/d/1fgjC4Uz6LEBu0mkShjM4XMXOSDIz6VuZ32Lb6APmmWk/edit?usp=sharing)
 
