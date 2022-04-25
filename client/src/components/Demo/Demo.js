@@ -14,9 +14,9 @@ const Discussion = () => {
     <div>
         <h1>{t("Welcome Users! Here's how you can access this Website")}</h1>
       <iframe
-        src="https://www.youtube.com/watch?v=qFmjyNnjKPI&ab_channel=KeertiPurswani"
+        src="https://www.youtube.com/embed/gBmEfwNbZVs"
         width="100%"
-        height="500"
+        height="600"
       ></iframe>
     </div>
   );
